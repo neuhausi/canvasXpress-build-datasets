@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>Example Map</title>
+
+    <!-- CanvasXpress -->
+    <style>
+        .canvasXpressContainerSite {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+    </style>
+    <link rel="stylesheet" href="https://canvasxpress.org/dist/canvasXpress.css" type="text/css" />
+    <script type="text/javascript" src="https://canvasxpress.org/dist/canvasXpress.min.js"></script>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="canvasXpressContainerSite">
+            <canvas id='NYC' width='1000' height='1000'></canvas>
+        </div>
+    </div>
+    <script>
+        var data = {
+            "renderTo": "NYC",
+            "data": "https://raw.githubusercontent.com/neuhausi/canvasXpress-build-datasets/master/Maps/AB_NYC_2019_sample.txt",
+            "config": {
+                "graphType": "Map",
+                "topoJSON": "https://raw.githubusercontent.com/neuhausi/canvasXpress-build-datasets/master/Maps/NYC.geojson",
+                "mapId": "nyc",
+                "markerBy": "room_type",
+                "mapMarkerShape": "circle",
+                "mapMarkerShapeScaleFactor": 0.1,
+                "motionBy": "price"
+            }
+        }
+        new CanvasXpress(data);
+    </script>
+
+</body>
+
+</html>
